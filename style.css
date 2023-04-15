@@ -58,3 +58,26 @@ body {
     border: .25vmin solid black;
 
 }
+.level-container,
+.score-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    background-color: #cccc;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+#level {
+    max-width: 200px;
+}
+
+.level-container {
+    right: unset;
+    left: 0;
+}
