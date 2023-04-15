@@ -12,67 +12,26 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 </head>
-<style>
-  body {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background-color: black;
-  }
-
-  #game-board {
-    background-color: #cccc;
-    width: 100vmin;
-    height: 100vmin;
-    display: grid;
-    grid-template-rows: repeat(21, 1fr);
-    grid-template-columns: repeat(21, 1fr);
-
-  }
-
-  .snake {
-    background-color: hsl(200, 100%, 50%);
-    border: .25vmin solid black;
-  }
-
-  .snake:nth-child(1) {
-    background-color: rgb(217, 172, 194);
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-
-  .snake:nth-child(1).up{
-    transform: rotate(0deg);
-
-  }
-  .snake:nth-child(1).left{
-    transform: rotate(360deg);
-  }
-  .snake:nth-child(1).right{
-    transform: rotate(90deg);
-  }
-  .snake:nth-child(1).down{
-    transform: rotate(180deg);
-  }
-
-  .food {
-    background-color: hsl(50, 100%, 50%);
-    border: .25vmin solid black;
-  }
-
-  .obstacle {
-    background-color: hsl(0, 100%, 50%);
-    border: .25vmin solid black;
-
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 <script src="game.js" defer type="module"></script>
 
 <body>
+
+  <div class="option-container">
+    <select id="level">
+      <option value="0">Select level</option>
+      <option value="5">Low</option>
+      <option value="10">Medium</option>
+      <option value="15">Hard</option>
+    </select>
+  </div>
+
   <div id="game-board">
+  </div>
+
+  <div class="score">
+    <h1>Score</h1>
+    <h2 id="score">0</h2>
   </div>
 
   <!-- Bootstrap JavaScript Libraries -->

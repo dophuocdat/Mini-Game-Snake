@@ -1,6 +1,6 @@
 import { getInputDirection } from "./input.js";
 
-export const SNAKE_SPEED = 10; // the number of frames per second
+export var SNAKE_SPEED = 0; // the number of frames per second
 
 const snakeBody = [
     { x: 11, y: 11 }
@@ -17,6 +17,8 @@ export function update() {
     snakeBody[0].x += inputDirection.x; // increment the x property of the first segment by 1
     snakeBody[0].y += inputDirection.y; // increment the y property of the first segment by 1
 
+    const score = document.getElementById('score');
+    score.innerHTML = snakeBody.length - 1;
 
 }
 export function draw(gameBoard) {
@@ -26,7 +28,9 @@ export function draw(gameBoard) {
         snakeElement.style.gridColumnStart = segment.x;
         snakeElement.classList.add('snake');
 
-       
+        if (index === 0) {
+            snakeElement.classList.add(window.snakeHead || 'up');
+        }
 
         gameBoard.appendChild(snakeElement);
     });

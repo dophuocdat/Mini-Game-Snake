@@ -3,12 +3,12 @@ import { expandSnake, onSnake } from "./snake.js";
 
 
 export let food = getRandomFoodPosition();
-const EXPANSION_RATE = 1;
+const EXPANSION_RATE = 10;
 
 export function update() {
     if (onSnake(food)) {
         expandSnake(EXPANSION_RATE);
-        food = getRandomFoodPosition();
+        food = getRandomFoodPosition();   
     }
     // console.log(onSnake(food));
 }
