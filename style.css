@@ -1,3 +1,8 @@
+
+*{
+    background-repeat: no-repeat;
+}
+
 body {
     height: 100vh;
     width: 100vw;
@@ -49,14 +54,15 @@ body {
 }
 
 .food {
-    background-color: hsl(50, 100%, 50%);
-    border: .25vmin solid black;
+    background-image: url("image/food.png");
+    background-size: 100% 100%;
+    background-position: center center;
 }
 
 .obstacle {
-    background-color: hsl(0, 100%, 50%);
-    border: .25vmin solid black;
-
+    background-image: url("image/rock.png");
+    background-size: 100% 100%;
+    background-position: center center;
 }
 .level-container,
 .score-container {
