@@ -17,25 +17,28 @@ export function update() {
     snakeBody[0].x += inputDirection.x; // increment the x property of the first segment by 1
     snakeBody[0].y += inputDirection.y; // increment the y property of the first segment by 1
 
-  
-}
-export function draw(gameBoard) {
-    snakeBody.forEach(segment => {
-        const snakeElement = document.createElement('div'); // create a div element
-        snakeElement.style.gridRowStart = segment.y; // set the gridRowStart property of the div element to the y property of the current segment
-        snakeElement.style.gridColumnStart = segment.x; // set the gridColumnStart property of the div element to the x property of the current segment
-        snakeElement.classList.add('snake'); // add the 'snake' class to the div element
-        gameBoard.appendChild(snakeElement); // append the div element to the gameBoard
-    })
 
 }
+export function draw(gameBoard) {
+    snakeBody.forEach((segment, index) => {
+        const snakeElement = document.createElement('div');
+        snakeElement.style.gridRowStart = segment.y;
+        snakeElement.style.gridColumnStart = segment.x;
+        snakeElement.classList.add('snake');
+
+       
+
+        gameBoard.appendChild(snakeElement);
+    });
+}
+
 
 
 export function expandSnake(amount) { // the amount of segments to add to the snake
     newSegments += amount; // add the amount to the newSegments variable
 }
 
-export function onSnake(position, { ignoreHead = false} = {}) {
+export function onSnake(position, { ignoreHead = false } = {}) {
     return snakeBody.some((segment, index) => {
         if (ignoreHead && index === 0) return false;
         return equalPositions(segment, position);
