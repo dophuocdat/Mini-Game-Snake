@@ -20,17 +20,22 @@ document.getElementById("level").addEventListener("change", function () {
 });
 
 function showNotification() {
-    
-    
+
+    return (Swal.fire({
+        iconHtml: '<img src="image/youLost.svg" class="overGame">',
+        confirmButtonText: 'Close'
+    }).then((r) => {
+        window.location = '/';
+    }));
 
 }
 
 function main(currentTime) {
     if (gameOver) {
         if (showNotification()) {
-            window.location = "/";
+           return;
         }
-        return;
+        
     }
     window.requestAnimationFrame(main); // requestAnimationFrame is a browser API that calls the function you pass to it whenever the browser is ready to render the next frame.
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000; // 1000 is the number of milliseconds in a second (1000ms = 1s)

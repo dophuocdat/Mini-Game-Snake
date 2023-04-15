@@ -81,3 +81,17 @@ body {
     right: unset;
     left: 0;
 }
+.swal2-show{
+    background-color: #0E0014 !important;
+    width: 90vmin;
+    border-radius: 10% !important;
+
+}
+.swal2-icon{
+    width: 60% !important;
+    height: 60% !important;
+}
+.overGame{
+    width: 100%;
+    height: 100%;
+}
