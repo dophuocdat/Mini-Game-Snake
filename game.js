@@ -19,9 +19,15 @@ document.getElementById("level").addEventListener("change", function () {
     this.blur();
 });
 
+function showNotification() {
+    
+    
+
+}
+
 function main(currentTime) {
     if (gameOver) {
-        if (confirm("Are you sure you want to restart?")) {
+        if (showNotification()) {
             window.location = "/";
         }
         return;
